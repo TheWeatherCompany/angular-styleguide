@@ -148,7 +148,8 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
    */
 
   // logger.js
-  (function() {
+  (function(angular, $, TWC) {
+  
       'use strict';
 
       angular
@@ -156,10 +157,10 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
           .factory('logger', logger);
 
       function logger() { }
-  })();
+  })(angular, jQuery, TWC);
 
   // storage.js
-  (function() {
+  (angular, $, TWC) {
       'use strict';
 
       angular
@@ -167,12 +168,14 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
           .factory('storage', storage);
 
       function storage() { }
-  })();
+  })(angular, jQuery, TWC);
   ```
 
   - Note: For brevity only, the rest of the examples in this guide may omit the IIFE syntax.
 
   - Note: IIFE's prevent test code from reaching private members like regular expressions or helper functions which are often good to unit test directly on their own. However you can test these through accessible members or by exposing them through their own component. For example placing helper functions, regular expressions or constants in their own factory or constant.
+
+  - Note: Passing in the global variables in the IIFE invocation allows us to determine what global variable dependencies the file/function has as well as allow us to alias the global variables locally.
 
 **[Back to top](#table-of-contents)**
 
@@ -3035,7 +3038,9 @@ Use file templates or snippets to help follow consistent styles and patterns. He
 ## Yeoman Generator
 ###### [Style [Y260](#style-y260)]
 
-You can use the [HotTowel yeoman generator](http://jpapa.me/yohottowel) to create an app that serves as a starting point for Angular that follows this style guide.
+You can use the [TWC Yeoman Generator](https://github.com/TheWeatherCompany/generator-twc) to create an Angularmods Module that serves as a starting point for Angular that follows this style guide.
+
+###### TODO
 
 1. Install generator-hottowel
 
