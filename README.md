@@ -2179,82 +2179,31 @@ This is a living document and should be evaluated as new conventions and best pr
      * recommended
      */
 
-    app/
-        app.module.js
-        app.config.js
-        components/
-            calendar.directive.js
-            calendar.directive.html
-            user-profile.directive.js
-            user-profile.directive.html
-        layout/
+    angular_mods_module/
+        angular_mods_module.app.js
+        angular_mods_module.config.js
+        angular_mods_module.run.js
+        angular_mods_module.controller.js
+        angular_mods_module.directiveNameCamelCase.directive.js
+        angular_mods_module.directiveName2CamelCase.directive.js
+        angular_mods_module.factory.js
+        angular_mods_module.factoryNameCamelCase.factory.js
+        tests/
+            angular_mods_module.app.spec.js
+            angular_mods_module.config.spec.js
+        templates/
             shell.html
             shell.controller.js
             topnav.html
             topnav.controller.js
-        people/
-            attendees.html
-            attendees.controller.js
-            people.routes.js
-            speakers.html
-            speakers.controller.js
-            speaker-detail.html
-            speaker-detail.controller.js
-        services/
-            data.service.js
-            localstorage.service.js
-            logger.service.js
-            spinner.service.js
-        sessions/
-            sessions.html
-            sessions.controller.js
-            sessions.routes.js
-            session-detail.html
-            session-detail.controller.js
-    ```
+        translations/
+            angular_mods_module.en-US.po
+            angular_mods_module.de-DE.po
+        css/
+            angular_mods_module.css
+        sass/
+            angular_mods_module.sass
 
-      ![Sample App Structure](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/assets/modularity-2.png)
-
-      Note: Do not structure your app using folders-by-type. This requires moving to multiple folders when working on a feature and gets unwieldy quickly as the app grows to 5, 10 or 25+ views and controllers (and other features), which makes it more difficult than folder-by-feature to locate files.
-
-    ```javascript
-    /*
-    * avoid
-    * Alternative folders-by-type.
-    * I recommend "folders-by-feature", instead.
-    */
-
-    app/
-        app.module.js
-        app.config.js
-        app.routes.js
-        directives.js
-        controllers/
-            attendees.js
-            session-detail.js
-            sessions.js
-            shell.js
-            speakers.js
-            speaker-detail.js
-            topnav.js
-        directives/
-            calendar.directive.js
-            calendar.directive.html
-            user-profile.directive.js
-            user-profile.directive.html
-        services/
-            dataservice.js
-            localstorage.js
-            logger.js
-            spinner.js
-        views/
-            attendees.html
-            session-detail.html
-            sessions.html
-            shell.html
-            speakers.html
-            speaker-detail.html
-            topnav.html
     ```
 
 **[Back to top](#table-of-contents)**
